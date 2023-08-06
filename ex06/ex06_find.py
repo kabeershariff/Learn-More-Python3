@@ -1,5 +1,5 @@
-import argparse
-import glob
+import argparse #To handle command line arguments
+import glob     #Pattern to find files and dirs
 
 def all_files():
     files = glob.glob('./**/*.*', recursive=True)
@@ -12,7 +12,7 @@ def all_dirs():
 def find(print_find, name_find, type_find, exec_find, get_all_files, get_all_dirs):
     if print_find and not name_find and not type_find and not exec_find:
         result = sorted(get_all_dirs() + get_all_files())
-        print('\n'.join(result))
+        print('\n'.join(result)) #join function instead of for loop #moreconcise
 
     if name_find and not type_find and not exec_find:
         file = glob.glob(name_find)
